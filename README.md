@@ -1,6 +1,6 @@
-# Lead Manager
+# STL Viewer
 
-> Full stack Django/React/Redux app that uses token based authentication with Knox.
+> Full stack Django/React/Redux app that is used to view STL files in the browser, analyze and save to leads list
 
 ## Quick Start
 
