@@ -39,7 +39,7 @@ render() {
   const { name, email, stlFile } = this.state;
     return (
       <div className="card card-body mt-4 mb-4">
-      <h2>Add Lead</h2>
+      <h2>Add STL file to database</h2>
       <form onSubmit={this.onSubmit}>
           <div className="App">
             <div className="form-group">
