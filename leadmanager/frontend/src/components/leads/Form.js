@@ -9,8 +9,6 @@ export class Form extends Component {
   constructor() {
     super();
     this.state = {
-      name: "",
-      email: "",
       stlFile: null,
     };
   }
