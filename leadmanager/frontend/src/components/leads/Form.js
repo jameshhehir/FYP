@@ -3,7 +3,6 @@ import { STLViewer } from 'react-stl-obj-viewer';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { addLead } from "../../actions/leads";
-import { FileUpload } from "redux-file-upload";
 
 export class Form extends Component {
   constructor() {
@@ -12,6 +11,8 @@ export class Form extends Component {
       stlFile: null,
     };
   }
+
+
 
 
   static propTypes = {
@@ -34,7 +35,7 @@ export class Form extends Component {
 
 
   render() {
-    const { name, email, stlFile } = this.state;
+    const { name, email } = this.state;
     return (
       <div className="card card-body mt-4 mb-4">
         <h2>Add STL file to database</h2>
@@ -84,10 +85,9 @@ export class Form extends Component {
                   file={this.state.stlFile}
                   className="obj"
                   modelColor="#909090" /> : null
-              }
-            </div>
-
-            <div className="form-group">
+                }
+              
+              <div className="form-group">
               <button onClick={(e) => {
                 console.log(e.target.files)
                 this.setState({
@@ -103,6 +103,7 @@ export class Form extends Component {
                 Submit
             </button>
             </div>
+          </div>
           </div>
         </form>
       </div>
