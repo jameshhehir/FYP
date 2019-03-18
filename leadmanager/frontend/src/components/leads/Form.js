@@ -23,19 +23,19 @@ export class Form extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    const { name, email, stlFile } = this.state;
-    const lead = { name, email, stlFile };
+    const { name, email, message } = this.state;
+    const lead = { name, email, message };
     this.props.addLead(lead);
     this.setState({
       name: "",
       email: "",
-      stlFile: "",
+      message: "",
     });
   };
 
 
   render() {
-    const { name, email } = this.state;
+    const { name, email, message } = this.state;
     return (
       <div className="card card-body mt-4 mb-4">
         <h2>Add STL file to database</h2>
@@ -67,13 +67,14 @@ export class Form extends Component {
                         <br />
                 <input type="file"
                   name="file"
-
-                  onChange={(e) => {
+                    onChange={(e) => {
                     console.log(e.target.files)
                     this.setState({
                       stlFile: e.target.files[0]
-                    })
+                    }
+                  )
                   }}
+                  value = {message}
                 />
               </label>
               {this.state.stlFile ?
