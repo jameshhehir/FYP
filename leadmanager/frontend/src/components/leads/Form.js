@@ -8,7 +8,7 @@ export class Form extends Component {
   constructor() {
     super();
     this.state = {
-      stlFile: null,
+      message: null,
     };
   }
 
