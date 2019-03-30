@@ -1,2 +1,0 @@
-release: python3 fyp/manage.py runserver
-web: gunicorn fyp.fyp.wsgi --log-file -
