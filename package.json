@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development --watch ./leadmanager/frontend/src/index.js --output ./leadmanager/frontend/static/frontend/main.js",
-    "build": "webpack --mode production ./leadmanager/frontend/src/index.js --output ./leadmanager/frontend/static/frontend/main.js",
+    "dev": "webpack --mode development --watch ./fyp/frontend/src/index.js --output ./fyp/frontend/static/frontend/main.js",
+    "build": "webpack --mode production ./fyp/frontend/src/index.js --output ./fyp/frontend/static/frontend/main.js",
     "postinstall": "npm run build"
   },
   "keywords": [],
