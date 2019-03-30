@@ -29,8 +29,6 @@ grpcio==1.18.0
 gunicorn==19.7.1
 heroku==0.1.4
 idna==2.7
--e git+https://github.com/jameshhehir/CollegeCode-.git@b7603bd6f154e59ab45ba6c7bff8d624676f622d#egg=instapy&subdirectory=InstaPy
-instapy-chromedriver==2.46
 ipykernel==5.1.0
 ipython==7.3.0
 ipython-genutils==0.2.0
