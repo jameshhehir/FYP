@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { STLViewer } from 'react-stl-obj-viewer';
+import { STLViewer } from 'react-stl-obj-viewer'; //react viewr component
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { addLead } from "../../actions/leads";
@@ -8,7 +8,7 @@ export class Form extends Component {
   constructor() {
     super();
     this.state = {
-      message: null,
+      stl_file: null,
     };
   }
 
@@ -23,26 +23,26 @@ export class Form extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    const { name, email, message } = this.state;
-    const lead = { name, email, message };
+    const { name, STLfile, filename } = this.state;
+    const lead = { name, STLfile, filename };
     this.props.addLead(lead);
     this.setState({
       name: "",
-      email: "",
-      message: "",
+      STLfile: "",
+      filename: "",
     });
   };
 
 
   render() {
-    const { name, email, message } = this.state;
+    const { name, STLfile, filename } = this.state;
     return (
       <div className="card card-body mt-4 mb-4">
-        <h2>Add STL file to database</h2>
+        <h2>Add STL file</h2>
         <form onSubmit={this.onSubmit}>
           <div className="App">
             <div className="form-group">
-              <label>Name</label>
+              <label>Name of File</label>
               <input
                 className="form-control"
                 type="text"
@@ -52,21 +52,30 @@ export class Form extends Component {
               />
             </div>
             <div className="form-group">
-              <label>Email</label>
+              <label>Is this ASCII or Binary?</label>
               <input
                 className="form-control"
-                type="email"
-                name="email"
+                type="text"
+                name="STLfile"
                 onChange={this.onChange}
-                value={email}
+                value={STLfile}
+              />
+            </div>
+            <div className="form-group">
+              <label>Description</label>
+              <input
+                className="form-control"
+                type="text"
+                name="filename"
+                onChange={this.onChange}
+                value={filename}
               />
             </div>
             <div className="form-group" id="div2">
               <label htmlFor="obj-file">
-                Load STL by file
                         <br />
                 <input type="file"
-                  name="file"
+                    name="stl_file"
                     onChange={(e) => {
                     console.log(e.target.files)
                     this.setState({
@@ -74,7 +83,6 @@ export class Form extends Component {
                     }
                   )
                   }}
-                  value = {message}
                 />
               </label>
               {this.state.stlFile ?
@@ -87,24 +95,26 @@ export class Form extends Component {
                   className="obj"
                   modelColor="#909090" /> : null
                 }
-              
-              <div className="form-group">
-              <button onClick={(e) => {
-                console.log(e.target.files)
-                this.setState({
-                  stlFile: null
-                })
-              }} type="reset" className="btn btn-danger">
-                Reset
-            </button>
-            </div>
 
-            <div className="form-group">
-              <button type="submit" className="btn btn-primary">
-                Submit
-            </button>
+                <br></br>
+              <table>
+                <tr>
+                    <div className="form-group">
+                    <button onClick={(e) => {
+                      console.log(e.target.files)
+                      this.setState({
+                        stlFile: null
+                      })
+                    }} type="reset" className="btn btn-danger">
+                      Reset
+                  </button> &nbsp;&nbsp;&nbsp;
+                      <button type="submit" className="btn btn-primary">  
+                      Submit 
+                    </button>
+                    </div>
+                </tr>
+              </table>
             </div>
-          </div>
           </div>
         </form>
       </div>

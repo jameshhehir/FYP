@@ -17,14 +17,14 @@ export class Leads extends Component {
   render() {
     return (
       <Fragment>
-        <h2>Leads</h2>
+        <h2>Files</h2>
         <table className="table table-striped">
           <thead>
             <tr>
               <th>ID</th>
               <th>Name</th>
-              <th>Email</th>
-              <th>STL File</th>
+              <th>ASCII or Binary</th>
+              <th>Description</th>
               <th />
             </tr>
           </thead>
@@ -33,8 +33,8 @@ export class Leads extends Component {
               <tr key={lead.id}>
                 <td>{lead.id}</td>
                 <td>{lead.name}</td>
-                <td>{lead.email}</td>
-                <td>{lead.message}</td>
+                <td>{lead.STLfile}</td>
+                <td>{lead.filename}</td>
                 <td>
                   <button
                     onClick={this.props.deleteLead.bind(this, lead.id)}
