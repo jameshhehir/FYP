@@ -8,7 +8,7 @@ export class Form extends Component {
   constructor() {
     super();
     this.state = {
-      stlFile: null,
+      stl_file: null,
     };
   }
 
@@ -23,20 +23,19 @@ export class Form extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    const { name, STLfile, filename, datafile } = this.state;
-    const lead = { name, STLfile, filename, datafile };
+    const { name, STLfile, filename } = this.state;
+    const lead = { name, STLfile, filename };
     this.props.addLead(lead);
     this.setState({
       name: "",
       STLfile: "",
       filename: "",
-      datafile: "",
     });
   };
 
 
   render() {
-    const { name, STLfile, filename, datafile } = this.state;
+    const { name, STLfile, filename } = this.state;
     return (
       <div className="card card-body mt-4 mb-4">
         <h2>Add STL file</h2>
@@ -76,16 +75,14 @@ export class Form extends Component {
               <label htmlFor="obj-file">
                         <br />
                 <input type="file"
-                    name="datafile"
+                    name="stl_file"
                     onChange={(e) => {
                     console.log(e.target.files)
                     this.setState({
                       stlFile: e.target.files[0]
                     }
                   )
-                  }
-                }
-                  value={datafile}
+                  }}
                 />
               </label>
               {this.state.stlFile ?
@@ -100,7 +97,9 @@ export class Form extends Component {
                 }
 
                 <br></br>
-                <div className="form-group">
+              <table>
+                <tr>
+                    <div className="form-group">
                     <button onClick={(e) => {
                       console.log(e.target.files)
                       this.setState({
@@ -112,8 +111,9 @@ export class Form extends Component {
                       <button type="submit" className="btn btn-primary">  
                       Submit 
                     </button>
-
-              </div>
+                    </div>
+                </tr>
+              </table>
             </div>
           </div>
         </form>
