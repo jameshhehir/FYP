@@ -9,5 +9,10 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin([
+      { from: './favicon.ico' }, 
+    ])
+  ]
 }

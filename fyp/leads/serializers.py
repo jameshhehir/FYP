@@ -6,3 +6,4 @@ class LeadSerializer(serializers.ModelSerializer):
   class Meta:
     model = Lead 
     fields = '__all__'
+    read_only_fields = ('datafile')
