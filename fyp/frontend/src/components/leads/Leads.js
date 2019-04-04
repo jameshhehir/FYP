@@ -25,7 +25,6 @@ export class Leads extends Component {
               <th>Name</th>
               <th>ASCII or Binary</th>
               <th>Description</th>
-              <th>File</th>
               <th />
             </tr>
           </thead>
@@ -36,7 +35,6 @@ export class Leads extends Component {
                 <td>{lead.name}</td>
                 <td>{lead.STLfile}</td>
                 <td>{lead.filename}</td>
-                <td>{lead.datafile}</td>
                 <td>
                   <button
                     onClick={this.props.deleteLead.bind(this, lead.id)}

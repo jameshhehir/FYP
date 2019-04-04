@@ -3,7 +3,7 @@ import { STLViewer } from 'react-stl-obj-viewer'; //react viewr component
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { addLead } from "../../actions/leads";
-
+ 
 export class Form extends Component {
   constructor() {
     super();
@@ -32,6 +32,7 @@ export class Form extends Component {
       filename: "",
     });
   };
+
 
 
   render() {
@@ -71,7 +72,7 @@ export class Form extends Component {
                 value={filename}
               />
             </div>
-            <div className="form-group" id="div2">
+            <div className="form-group" id="stl_cont">
               <label htmlFor="obj-file">
                         <br />
                 <input type="file"

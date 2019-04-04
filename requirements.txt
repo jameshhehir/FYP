@@ -19,6 +19,9 @@ django-heroku==0.3.1
 django-rest-auth==0.9.3
 django-rest-knox==3.6.0
 djangorestframework==3.8.2
+dj-database-url==0.3.0
+dj-static==0.0.6
+gunicorn==19.6.0
 EasyProcess==0.2.5
 emoji==0.5.1
 entrypoints==0.3
@@ -26,7 +29,6 @@ fake-useragent==0.1.11
 future==0.17.1
 googleapis-common-protos==1.5.8
 grpcio==1.18.0
-gunicorn==19.7.1
 heroku==0.1.4
 idna==2.7
 ipykernel==5.1.0
