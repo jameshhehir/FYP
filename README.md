@@ -1,6 +1,6 @@
 # STL Viewer
 
-> Full stack Django/React/Redux app that is used to view STL files in the browser, analyze and save to leads list
+> Full stack Django/React/Redux app that is used to view STL files in the browser, analyze and save to details list
 
 ## Quick Start
 
@@ -9,7 +9,7 @@
 npm install
 
 # Serve API on localhost:8000
-python leadmanager/manage.py runserver
+python fyp/manage.py runserver
 
 # Run webpack (from root)
 npm run dev
